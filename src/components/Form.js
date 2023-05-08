@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { categories } from "../App";
 
-function Form() {
+function Form({setDataForList}) {
     let [formData, setFormData] = useState({});
     const changeHandler = (e) => {
         setFormData({
@@ -11,8 +11,8 @@ function Form() {
     }
     const formSubmitHandler = (e) => {
         e.preventDefault();
-        console.log(formData)
-        setFormData("");
+        setDataForList(formData);
+        // setFormData("");
         // e.reset();
     }
 
